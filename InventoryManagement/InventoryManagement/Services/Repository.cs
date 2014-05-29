@@ -11,7 +11,7 @@ namespace InventoryManagement
     {
         public Repository()
         {
-            var context = new LightSpeedContext<MySuperDemoUnitOfWork>();
+            var context = new LightSpeedContext<LightSpeedModelNameUnitOfWork>();
             context.ConnectionString = @"server=.\sqlexpress;database=students;Trusted_Connection=True;";
             context.IdentityMethod = IdentityMethod.IdentityColumn;
 
