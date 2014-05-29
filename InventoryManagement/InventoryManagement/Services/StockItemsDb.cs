@@ -27,14 +27,19 @@ namespace InventoryManagement
             repo.SaveChanges();
         }
 
-        public void GetItem(int id)
+        public StockItem GetItem(int id)
         {
-            repo.FindById(id);
+            return repo.FindById(id);
         }
 
-        public void ListItems()
+        public List<StockItems> ListItems()
         {
-            repo.GetAll();
+            return repo.GetAll();
+        }
+
+        public int GetQuantity(int id)
+        {
+            return repo.FindById(id).Quantity;
         }
 
     }
