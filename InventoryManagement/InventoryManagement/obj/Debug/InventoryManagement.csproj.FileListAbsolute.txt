@@ -1,0 +1,2 @@
+C:\Code\design-drill-classical-inheritance-challenge\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe.config
+C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe.config
