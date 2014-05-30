@@ -23,7 +23,7 @@ namespace InventoryManagement
 
         public void NewCustomerOrder()
         {
-            Console.WriteLine()
+            Console.WriteLine();
         }
     }
 
