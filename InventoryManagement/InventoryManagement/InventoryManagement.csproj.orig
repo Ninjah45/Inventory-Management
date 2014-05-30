@@ -47,13 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="LightSpeedModel1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LightSpeedModel1.lsmodel</DependentUpon>
     </Compile>
-     <Compile Include="InvController.cs" />
-
+=======
+    <Compile Include="InvController.cs" />
+>>>>>>> master
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View.cs" />
