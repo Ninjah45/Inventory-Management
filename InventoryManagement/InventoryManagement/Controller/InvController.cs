@@ -27,12 +27,13 @@ namespace InventoryManagement
             {
                 case "ADJUST":
                     {
-                        view.ChangeQuantity(Convert.ToInt32(parameter));
+                        view.ChangeQuantity(Convert.ToInt32(parameter[1]));
                         break;
                     }
                 case "LIST":
                     {
                         view.ListStock();
+                        Console.ReadLine();
                         break;
                     }
                 case "ADD":
@@ -56,8 +57,10 @@ namespace InventoryManagement
                     {
                         Console.WriteLine("Invalid command");
                         break;
-                    }  
-            }
+                    }                    
+               }
+            Console.Clear();
+            Start();
         }
 
         //public void OrderMenu()

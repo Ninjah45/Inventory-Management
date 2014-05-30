@@ -13,6 +13,7 @@ namespace InventoryManagement
             InvController controller = new InvController();
 
             controller.Start();
+            
         }
     }
 }

@@ -1,6 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="LightSpeedModel1" targetNamespace="InventoryManagement" databaseProvider="SqlServer2008" connectionString="Data Source=jaguar\sqlexpress;Initial Catalog=Orders;Integrated Security=True;Pooling=False" pluralizedInDatabase="false" mediumTrustCompatibility="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
   <entities>
+    <entity name="CustOrder" identityType="Int32" cacheExpiry="0" tableName="cust_orders">
+      <entityProperties>
+        <entityProperty name="OrderDate" dataType="DateTime" columnName="order_date" privateSetter="false" />
+      </entityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="803919a8-7bec-47d2-8de9-3fedecba0e97" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
+          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="StockItem" identityType="Int32" cacheExpiry="0" tableName="stock_items">
+      <entityProperties>
+        <entityProperty name="Name" privateSetter="false">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Price" dataType="Decimal" privateSetter="false" />
+        <entityProperty name="Quantity" dataType="Int32" privateSetter="false" />
+      </entityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="48afdbae-cda5-45f5-acfe-ee2d5d35eca2" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false" columnName="stock_items_id">
+          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
     <entity name="Customer" identityType="Int32" cacheExpiry="0" tableName="customers">
       <entityProperties>
         <entityProperty name="Name" privateSetter="false">
@@ -17,18 +44,8 @@
         </entityProperty>
       </entityProperties>
       <oneToManyAssociations>
-        <oneToManyAssociation Id="f4b6859b-6550-4ffa-aabe-56aea65f581c" collectionName="CustOrders" backreferenceName="Cust" isNullable="false" columnName="cust_id">
+        <oneToManyAssociation Id="a7985e9e-45d7-4151-bf33-91ca032229c2" collectionName="CustOrders" backreferenceName="Cust" isNullable="false" columnName="cust_id">
           <entityMoniker name="/LightSpeedModel1/CustOrder" />
-        </oneToManyAssociation>
-      </oneToManyAssociations>
-    </entity>
-    <entity name="CustOrder" identityType="Int32" cacheExpiry="0" tableName="cust_orders">
-      <entityProperties>
-        <entityProperty name="OrderDate" dataType="DateTime" columnName="order_date" privateSetter="false" />
-      </entityProperties>
-      <oneToManyAssociations>
-        <oneToManyAssociation Id="5605adb6-a44e-4364-bd41-42692f23cd2b" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
-          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>
     </entity>
@@ -36,23 +53,6 @@
       <entityProperties>
         <entityProperty name="OrderQuantity" dataType="Int32" columnName="order_quantity" privateSetter="false" />
       </entityProperties>
-    </entity>
-    <entity name="StockItem" identityType="Int32" cacheExpiry="0" tableName="stock_items">
-      <entityProperties>
-        <entityProperty name="Name" privateSetter="false">
-          <validations>
-            <presenceValidation />
-            <lengthValidation minimumLength="0" maximumLength="50" />
-          </validations>
-        </entityProperty>
-        <entityProperty name="Price" dataType="Decimal" privateSetter="false" />
-        <entityProperty name="Quantity" dataType="Int32" privateSetter="false" />
-      </entityProperties>
-      <oneToManyAssociations>
-        <oneToManyAssociation Id="2608c730-f0f1-4c1a-b987-9f7a3a01952e" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false">
-          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
-        </oneToManyAssociation>
-      </oneToManyAssociations>
     </entity>
   </entities>
 </model>

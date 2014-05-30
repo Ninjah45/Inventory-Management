@@ -12,7 +12,6 @@ namespace InventoryManagement
 
         public StockItemsDb()
         {
-
         }
 
         public static void AddItem(StockItem item)
