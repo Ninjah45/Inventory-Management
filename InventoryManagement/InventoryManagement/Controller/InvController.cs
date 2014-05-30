@@ -15,6 +15,7 @@ namespace InventoryManagement
         {
             view.Header();
             view.DisplayMenu();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             var input = Console.ReadLine();
             var inputArray = input.Split(' ');
             SwitchMenu(inputArray);
