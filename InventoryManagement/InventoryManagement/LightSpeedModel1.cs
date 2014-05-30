@@ -16,6 +16,7 @@ namespace InventoryManagement
   
     [Column("order_date")]
     private System.DateTime _orderDate;
+    [Column("cust_id")]
     private int _custId;
 
     #endregion
@@ -69,6 +70,76 @@ namespace InventoryManagement
     {
       get { return Get(ref _custId, "CustId"); }
       set { Set(ref _custId, value, "CustId"); }
+    }
+
+    #endregion
+  }
+
+
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
+  [Table("stock_items")]
+  public partial class StockItem : Entity<int>
+  {
+    #region Fields
+  
+    [ValidatePresence]
+    [ValidateLength(0, 50)]
+    private string _name;
+    private decimal _price;
+    private int _quantity;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the Name entity attribute.</summary>
+    public const string NameField = "Name";
+    /// <summary>Identifies the Price entity attribute.</summary>
+    public const string PriceField = "Price";
+    /// <summary>Identifies the Quantity entity attribute.</summary>
+    public const string QuantityField = "Quantity";
+
+
+    #endregion
+    
+    #region Relationships
+
+    [ReverseAssociation("StockItems")]
+    private readonly EntityCollection<ItemOrder> _itemOrders = new EntityCollection<ItemOrder>();
+
+
+    #endregion
+    
+    #region Properties
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public EntityCollection<ItemOrder> ItemOrders
+    {
+      get { return Get(_itemOrders); }
+    }
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public string Name
+    {
+      get { return Get(ref _name, "Name"); }
+      set { Set(ref _name, value, "Name"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public decimal Price
+    {
+      get { return Get(ref _price, "Price"); }
+      set { Set(ref _price, value, "Price"); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public int Quantity
+    {
+      get { return Get(ref _quantity, "Quantity"); }
+      set { Set(ref _quantity, value, "Quantity"); }
     }
 
     #endregion
@@ -149,6 +220,7 @@ namespace InventoryManagement
     private int _orderQuantity;
     [Column("orders_id")]
     private int _ordersId;
+    [Column("stock_items_id")]
     private int _stockItemsId;
 
     #endregion
@@ -219,76 +291,6 @@ namespace InventoryManagement
   }
 
 
-  [Serializable]
-  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
-  [System.ComponentModel.DataObject]
-  [Table("stock_items")]
-  public partial class StockItem : Entity<int>
-  {
-    #region Fields
-  
-    [ValidatePresence]
-    [ValidateLength(0, 50)]
-    private string _name;
-    private decimal _price;
-    private int _quantity;
-
-    #endregion
-    
-    #region Field attribute and view names
-    
-    /// <summary>Identifies the Name entity attribute.</summary>
-    public const string NameField = "Name";
-    /// <summary>Identifies the Price entity attribute.</summary>
-    public const string PriceField = "Price";
-    /// <summary>Identifies the Quantity entity attribute.</summary>
-    public const string QuantityField = "Quantity";
-
-
-    #endregion
-    
-    #region Relationships
-
-    [ReverseAssociation("StockItems")]
-    private readonly EntityCollection<ItemOrder> _itemOrders = new EntityCollection<ItemOrder>();
-
-
-    #endregion
-    
-    #region Properties
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public EntityCollection<ItemOrder> ItemOrders
-    {
-      get { return Get(_itemOrders); }
-    }
-
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public string Name
-    {
-      get { return Get(ref _name, "Name"); }
-      set { Set(ref _name, value, "Name"); }
-    }
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public decimal Price
-    {
-      get { return Get(ref _price, "Price"); }
-      set { Set(ref _price, value, "Price"); }
-    }
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public int Quantity
-    {
-      get { return Get(ref _quantity, "Quantity"); }
-      set { Set(ref _quantity, value, "Quantity"); }
-    }
-
-    #endregion
-  }
-
-
 
 
   /// <summary>
@@ -303,6 +305,11 @@ namespace InventoryManagement
       get { return this.Query<CustOrder>(); }
     }
     
+    public System.Linq.IQueryable<StockItem> StockItems
+    {
+      get { return this.Query<StockItem>(); }
+    }
+    
     public System.Linq.IQueryable<Customer> Customers
     {
       get { return this.Query<Customer>(); }
@@ -311,11 +318,6 @@ namespace InventoryManagement
     public System.Linq.IQueryable<ItemOrder> ItemOrders
     {
       get { return this.Query<ItemOrder>(); }
-    }
-    
-    public System.Linq.IQueryable<StockItem> StockItems
-    {
-      get { return this.Query<StockItem>(); }
     }
     
   }

@@ -21,6 +21,11 @@ namespace InventoryManagement
             repo.SaveChanges();
         }
 
+        public void Adjust(int i, int j)
+        { 
+            //temp method to make things sort of work.
+        }
+
         public void RemoveItem(StockItem item)
         {
             repo.Delete(item);

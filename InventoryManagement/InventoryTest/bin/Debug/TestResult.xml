@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\InventoryTest.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-05-30" time="15:57:24">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5477" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="SERVAL" user="user" user-domain="SERVAL" />
+  <culture-info current-culture="en-NZ" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\InventoryTest.dll" executed="True" result="Failure" success="False" time="1.722" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="InventoryTest" executed="True" result="Failure" success="False" time="1.704" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="TestCustomerOrder" executed="True" result="Failure" success="False" time="1.701" asserts="0">
+            <results>
+              <test-case name="InventoryTest.TestCustomerOrder.test_that_ADDORDER_adds_to_list" executed="True" result="Error" success="False" time="1.450" asserts="0">
+                <failure>
+                  <message><![CDATA[System.Data.SqlClient.SqlException : The INSERT statement conflicted with the FOREIGN KEY constraint "FK_cust_orders_customers". The conflict occurred in database "Orders", table "dbo.customers", column 'id'.
+The statement has been terminated.]]></message>
+                  <stack-trace><![CDATA[at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+at System.Data.SqlClient.SqlDataReader.get_MetaData()
+at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+at System.Data.SqlClient.SqlCommand.ExecuteScalar()
+at Mindscape.LightSpeed.Profiling.Interceptor.ExecuteCommand(Func`1 baseExecutor, IUnitOfWork unitOfWork, IDbCommand command)
+at ..(IUnitOfWork , IDbCommand , Func`1 )
+at ..(Entity ,  )
+at ..(Entity , ICollection`1 )
+at ..(Entity , List`1 )
+at ..(UnitOfWorkBase , IEnumerable`1 , IEnumerable`1 )
+at Mindscape.LightSpeed.UnitOfWork.SaveChanges(Boolean reset)
+at InventoryManagement.Repository`1.SaveChanges() in c:\Code\Inventory-Management\InventoryManagement\InventoryManagement\Services\Repository.cs:line 57
+at InventoryManagement.CustomerOrdersDb.AddOrder(CustOrder order) in c:\Code\Inventory-Management\InventoryManagement\InventoryManagement\Services\CustomerOrdersDb.cs:line 21
+at InventoryTest.TestCustomerOrder.test_that_ADDORDER_adds_to_list() in c:\Code\Inventory-Management\InventoryManagement\InventoryTest\TestCustomerOrder.cs:line 23
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

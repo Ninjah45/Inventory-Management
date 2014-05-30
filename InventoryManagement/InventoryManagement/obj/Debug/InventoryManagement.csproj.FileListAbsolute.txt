@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe.config
-C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache
-=======
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.pdb
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\Mindscape.LightSpeed.dll
@@ -10,4 +7,4 @@ C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\M
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\Mindscape.LightSpeed.Linq.xml
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.exe
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.pdb
->>>>>>> master
+C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache

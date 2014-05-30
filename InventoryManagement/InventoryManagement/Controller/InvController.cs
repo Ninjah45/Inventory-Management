@@ -6,38 +6,38 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement
 {
-    class InvController
+    public class InvController
     {
-        Stock stock = new Stock();
+        StockItemsDb stock = new StockItemsDb();
         ConsoleView view = new ConsoleView();
 
-        public void SwitchMenu(string input, string parameter)
-        {
-            switch (input.ToUpper())  //MENU SWITCH
-            {
-                case "ADJUST":
-                    int stockid;                    
-                    int.TryParse(input, out stockid);
-                    int quantity = view.ConfirmQuantity(stockid);
-                    view.ConfirmAdjustment(stockid, quantity);
-                    stock.Adjust(stockid, quantity);
-                break;
+        //public void SwitchMenu(string input, string parameter)
+        //{
+        //    switch (input.ToUpper())  //MENU SWITCH
+        //    {
+        //        case "ADJUST":
+        //            int stockid;                    
+        //            int.TryParse(input, out stockid);
+        //            int quantity = view.ConfirmQuantity(stockid);
+        //            view.ConfirmAdjustment(stockid, quantity);
+        //            stock.Adjust(stockid, quantity);
+        //        break;
 
-                case "ORDER":
-                    OrderMenu();
-                break;
+        //        case "ORDER":
+        //            OrderMenu();
+        //        break;
 
-                case "STOCK":
+        //        case "STOCK":
 
-                break;
+        //        break;
 
-                default:
+        //        default:
 
-                    Console.WriteLine("Invalid command");
+        //            Console.WriteLine("Invalid command");
 
-                break;
-            }
-        }
+        //        break;
+        //    }
+        //}
 
         public void OrderMenu()
         {

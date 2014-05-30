@@ -6,7 +6,24 @@
         <entityProperty name="OrderDate" dataType="DateTime" columnName="order_date" privateSetter="false" />
       </entityProperties>
       <oneToManyAssociations>
-        <oneToManyAssociation Id="4f936cd3-ccf1-41c0-a9f9-3bff479c625e" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
+        <oneToManyAssociation Id="b1806b33-fc73-4e8c-b0d1-191a2eec2228" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
+          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="StockItem" identityType="Int32" cacheExpiry="0" tableName="stock_items">
+      <entityProperties>
+        <entityProperty name="Name" privateSetter="false">
+          <validations>
+            <presenceValidation />
+            <lengthValidation minimumLength="0" maximumLength="50" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="Price" dataType="Decimal" privateSetter="false" />
+        <entityProperty name="Quantity" dataType="Int32" privateSetter="false" />
+      </entityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="6cf7ddd8-b042-4b19-ad2e-4ce488d37eec" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false" columnName="stock_items_id">
           <entityMoniker name="/LightSpeedModel1/ItemOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>
@@ -27,7 +44,7 @@
         </entityProperty>
       </entityProperties>
       <oneToManyAssociations>
-        <oneToManyAssociation Id="3606c7f8-09f2-43dc-be2a-9ed83e69580e" collectionName="CustOrders" backreferenceName="Cust" isNullable="false">
+        <oneToManyAssociation Id="542351db-3230-4f5e-9087-d1475ecf3ba6" collectionName="CustOrders" backreferenceName="Cust" isNullable="false" columnName="cust_id">
           <entityMoniker name="/LightSpeedModel1/CustOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>
@@ -36,23 +53,6 @@
       <entityProperties>
         <entityProperty name="OrderQuantity" dataType="Int32" columnName="order_quantity" privateSetter="false" />
       </entityProperties>
-    </entity>
-    <entity name="StockItem" identityType="Int32" cacheExpiry="0" tableName="stock_items">
-      <entityProperties>
-        <entityProperty name="Name" privateSetter="false">
-          <validations>
-            <presenceValidation />
-            <lengthValidation minimumLength="0" maximumLength="50" />
-          </validations>
-        </entityProperty>
-        <entityProperty name="Price" dataType="Decimal" privateSetter="false" />
-        <entityProperty name="Quantity" dataType="Int32" privateSetter="false" />
-      </entityProperties>
-      <oneToManyAssociations>
-        <oneToManyAssociation Id="8bc347b7-bb3d-4f3e-bbe0-3a3036372caa" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false">
-          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
-        </oneToManyAssociation>
-      </oneToManyAssociations>
     </entity>
   </entities>
 </model>

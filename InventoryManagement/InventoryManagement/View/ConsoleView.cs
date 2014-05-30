@@ -26,25 +26,25 @@ namespace InventoryManagement
             Console.WriteLine();
         }
 
-        public int ConfirmQuantity(int id)
-        {
-            Console.WriteLine("What's the new quantity for" + STOCKNAME + "?");
-            string quantity = Console.ReadLine();
-            int quantityInt;
-            int.TryParse(quantity, out quantityInt);
-            return quantityInt;
-        }
+        //public int ConfirmQuantity(int id)
+        //{
+        //    Console.WriteLine("What's the new quantity for" + STOCKNAME + "?");
+        //    string quantity = Console.ReadLine();
+        //    int quantityInt;
+        //    int.TryParse(quantity, out quantityInt);
+        //    return quantityInt;
+        //}
 
-        public void ConfirmAdjustment(int stockid, int quantity)
-        {
-            if (quantity > stockid.quantity)
-            {
-                Console.WriteLine("You've added" + STOCKNAME + ". New total is " + quantity + ".");
-            }
-            if (quantity < stockid.quantity)
-            {
-                Console.WriteLine("You've removed" + STOCKNAME + ". New total is " + quantity + ".");
-            }
-        }
+        //public void ConfirmAdjustment(int stockid, int quantity)
+        //{
+        //    if (quantity > stockid.quantity)
+        //    {
+        //        Console.WriteLine("You've added" + STOCKNAME + ". New total is " + quantity + ".");
+        //    }
+        //    if (quantity < stockid.quantity)
+        //    {
+        //        Console.WriteLine("You've removed" + STOCKNAME + ". New total is " + quantity + ".");
+        //    }
+        //}
     }
 }
