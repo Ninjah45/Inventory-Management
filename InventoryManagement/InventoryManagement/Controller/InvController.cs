@@ -8,16 +8,23 @@ namespace InventoryManagement
 {
     class InvController
     {
+        Stock stock = new Stock();
+        ConsoleView view = new ConsoleView();
+
         public void SwitchMenu(string input, string parameter)
         {
             switch (input.ToUpper())  //MENU SWITCH
             {
-                case "ADD":
-
+                case "ADJUST":
+                    int stockid;                    
+                    int.TryParse(input, out stockid);
+                    int quantity = view.ConfirmQuantity(stockid);
+                    view.ConfirmAdjustment(stockid, quantity);
+                    stock.Adjust(stockid, quantity);
                 break;
 
                 case "ORDER":
-
+                    OrderMenu();
                 break;
 
                 case "STOCK":
@@ -30,6 +37,11 @@ namespace InventoryManagement
 
                 break;
             }
+        }
+
+        public void OrderMenu()
+        {
+ 
         }
     }
 }
