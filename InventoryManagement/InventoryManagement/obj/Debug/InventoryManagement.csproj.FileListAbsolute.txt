@@ -2,8 +2,6 @@
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe.config
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache
 =======
-C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\obj\Debug\InventoryManagement.csprojResolveAssemblyReference.cache
-C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe.config
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.exe
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\InventoryManagement.pdb
 C:\Code\Inventory-Management\InventoryManagement\InventoryManagement\bin\Debug\Mindscape.LightSpeed.dll
