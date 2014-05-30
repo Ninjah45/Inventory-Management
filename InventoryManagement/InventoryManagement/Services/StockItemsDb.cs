@@ -42,5 +42,12 @@ namespace InventoryManagement
             return repo.FindById(id).Quantity;
         }
 
+        public void UpdateStock(int id, int adjust)
+        {
+            var update = repo.FindById(id);
+            update.Quantity += adjust;
+            repo.SaveChanges();
+        }
+
     }
 }
