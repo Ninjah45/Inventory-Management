@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.1.0.0" name="LightSpeedModel1" targetNamespace="InventoryManagement" databaseProvider="SqlServer2008" connectionString="Data Source=jaguar\sqlexpress;Initial Catalog=Orders;Integrated Security=True;Pooling=False" pluralizedInDatabase="false" mediumTrustCompatibility="false" xmlns="http://namespaces.mindscape.co.nz/lightspeed">
   <entities>
-    <entity name="CustOrder" identityType="Int32" cacheExpiry="0" tableName="cust_orders">
-      <entityProperties>
-        <entityProperty name="OrderDate" dataType="DateTime" columnName="order_date" privateSetter="false" />
-      </entityProperties>
-      <oneToManyAssociations>
-        <oneToManyAssociation Id="4f936cd3-ccf1-41c0-a9f9-3bff479c625e" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
-          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
-        </oneToManyAssociation>
-      </oneToManyAssociations>
-    </entity>
     <entity name="Customer" identityType="Int32" cacheExpiry="0" tableName="customers">
       <entityProperties>
         <entityProperty name="Name" privateSetter="false">
@@ -27,8 +17,18 @@
         </entityProperty>
       </entityProperties>
       <oneToManyAssociations>
-        <oneToManyAssociation Id="3606c7f8-09f2-43dc-be2a-9ed83e69580e" collectionName="CustOrders" backreferenceName="Cust" isNullable="false">
+        <oneToManyAssociation Id="f4b6859b-6550-4ffa-aabe-56aea65f581c" collectionName="CustOrders" backreferenceName="Cust" isNullable="false" columnName="cust_id">
           <entityMoniker name="/LightSpeedModel1/CustOrder" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="CustOrder" identityType="Int32" cacheExpiry="0" tableName="cust_orders">
+      <entityProperties>
+        <entityProperty name="OrderDate" dataType="DateTime" columnName="order_date" privateSetter="false" />
+      </entityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="5605adb6-a44e-4364-bd41-42692f23cd2b" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
+          <entityMoniker name="/LightSpeedModel1/ItemOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>
     </entity>
@@ -49,7 +49,7 @@
         <entityProperty name="Quantity" dataType="Int32" privateSetter="false" />
       </entityProperties>
       <oneToManyAssociations>
-        <oneToManyAssociation Id="8bc347b7-bb3d-4f3e-bbe0-3a3036372caa" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false">
+        <oneToManyAssociation Id="2608c730-f0f1-4c1a-b987-9f7a3a01952e" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false">
           <entityMoniker name="/LightSpeedModel1/ItemOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>

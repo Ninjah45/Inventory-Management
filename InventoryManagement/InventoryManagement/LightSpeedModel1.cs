@@ -9,75 +9,6 @@ namespace InventoryManagement
   [Serializable]
   [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
   [System.ComponentModel.DataObject]
-  [Table("cust_orders")]
-  public partial class CustOrder : Entity<int>
-  {
-    #region Fields
-  
-    [Column("order_date")]
-    private System.DateTime _orderDate;
-    private int _custId;
-
-    #endregion
-    
-    #region Field attribute and view names
-    
-    /// <summary>Identifies the OrderDate entity attribute.</summary>
-    public const string OrderDateField = "OrderDate";
-    /// <summary>Identifies the CustId entity attribute.</summary>
-    public const string CustIdField = "CustId";
-
-
-    #endregion
-    
-    #region Relationships
-
-    [ReverseAssociation("Orders")]
-    private readonly EntityCollection<ItemOrder> _itemOrders = new EntityCollection<ItemOrder>();
-    [ReverseAssociation("CustOrders")]
-    private readonly EntityHolder<Customer> _cust = new EntityHolder<Customer>();
-
-
-    #endregion
-    
-    #region Properties
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public EntityCollection<ItemOrder> ItemOrders
-    {
-      get { return Get(_itemOrders); }
-    }
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public Customer Cust
-    {
-      get { return Get(_cust); }
-      set { Set(_cust, value); }
-    }
-
-
-    [System.Diagnostics.DebuggerNonUserCode]
-    public System.DateTime OrderDate
-    {
-      get { return Get(ref _orderDate, "OrderDate"); }
-      set { Set(ref _orderDate, value, "OrderDate"); }
-    }
-
-    /// <summary>Gets or sets the ID for the <see cref="Cust" /> property.</summary>
-    [System.Diagnostics.DebuggerNonUserCode]
-    public int CustId
-    {
-      get { return Get(ref _custId, "CustId"); }
-      set { Set(ref _custId, value, "CustId"); }
-    }
-
-    #endregion
-  }
-
-
-  [Serializable]
-  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
-  [System.ComponentModel.DataObject]
   [Table("customers")]
   public partial class Customer : Entity<int>
   {
@@ -131,6 +62,76 @@ namespace InventoryManagement
     {
       get { return Get(ref _address, "Address"); }
       set { Set(ref _address, value, "Address"); }
+    }
+
+    #endregion
+  }
+
+
+  [Serializable]
+  [System.CodeDom.Compiler.GeneratedCode("LightSpeedModelGenerator", "1.0.0.0")]
+  [System.ComponentModel.DataObject]
+  [Table("cust_orders")]
+  public partial class CustOrder : Entity<int>
+  {
+    #region Fields
+  
+    [Column("order_date")]
+    private System.DateTime _orderDate;
+    [Column("cust_id")]
+    private int _custId;
+
+    #endregion
+    
+    #region Field attribute and view names
+    
+    /// <summary>Identifies the OrderDate entity attribute.</summary>
+    public const string OrderDateField = "OrderDate";
+    /// <summary>Identifies the CustId entity attribute.</summary>
+    public const string CustIdField = "CustId";
+
+
+    #endregion
+    
+    #region Relationships
+
+    [ReverseAssociation("Orders")]
+    private readonly EntityCollection<ItemOrder> _itemOrders = new EntityCollection<ItemOrder>();
+    [ReverseAssociation("CustOrders")]
+    private readonly EntityHolder<Customer> _cust = new EntityHolder<Customer>();
+
+
+    #endregion
+    
+    #region Properties
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public EntityCollection<ItemOrder> ItemOrders
+    {
+      get { return Get(_itemOrders); }
+    }
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public Customer Cust
+    {
+      get { return Get(_cust); }
+      set { Set(_cust, value); }
+    }
+
+
+    [System.Diagnostics.DebuggerNonUserCode]
+    public System.DateTime OrderDate
+    {
+      get { return Get(ref _orderDate, "OrderDate"); }
+      set { Set(ref _orderDate, value, "OrderDate"); }
+    }
+
+    /// <summary>Gets or sets the ID for the <see cref="Cust" /> property.</summary>
+    [System.Diagnostics.DebuggerNonUserCode]
+    public int CustId
+    {
+      get { return Get(ref _custId, "CustId"); }
+      set { Set(ref _custId, value, "CustId"); }
     }
 
     #endregion
@@ -298,14 +299,14 @@ namespace InventoryManagement
   public partial class LightSpeedModel1UnitOfWork : Mindscape.LightSpeed.UnitOfWork
   {
 
-    public System.Linq.IQueryable<CustOrder> CustOrders
-    {
-      get { return this.Query<CustOrder>(); }
-    }
-    
     public System.Linq.IQueryable<Customer> Customers
     {
       get { return this.Query<Customer>(); }
+    }
+    
+    public System.Linq.IQueryable<CustOrder> CustOrders
+    {
+      get { return this.Query<CustOrder>(); }
     }
     
     public System.Linq.IQueryable<ItemOrder> ItemOrders

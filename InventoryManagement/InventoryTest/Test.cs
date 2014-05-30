@@ -9,9 +9,9 @@ namespace InventoryTest
 {
     public class Test
     {
-        [Test]
-        {
+        //[Test]
+        //{
             
-        }
+        //}
     }
 }

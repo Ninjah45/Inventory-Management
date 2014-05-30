@@ -10,6 +10,9 @@ namespace InventoryManagement
     {
         static void Main(string[] args)
         {
+            InvController controller = new InvController();
+
+            controller.Start();
         }
     }
 }
