@@ -8,7 +8,7 @@ namespace InventoryManagement
 {
     public class ItemOrderDb
     {
-        public Repository<ItemOrders> repo = new Repository<ItemOrders>();
+        public Repository<ItemOrder> repo = new Repository<ItemOrder>();
 
         public ItemOrderDb()
         {

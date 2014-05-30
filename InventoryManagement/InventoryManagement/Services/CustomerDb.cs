@@ -8,33 +8,33 @@ namespace InventoryManagement
 {
     public class CustomerDb
     {
-        public Repository<Customers> repo = new Repository<Customers>();
+        public Repository<Customer> repo = new Repository<Customer>();
 
         public CustomerDb()
         {
 
         }
 
-        public void AddCustomer(Customers customer)
+        public void AddCustomer(Customer customer)
         {
             repo.Add(customer);
             repo.SaveChanges();
         }
 
-        public void RemoveCustomer(Customers customer)
+        public void RemoveCustomer(Customer customer)
         {
             repo.Delete(customer);
             repo.SaveChanges();
         }
 
-        public void GetCustomer(int id)
+        public Customer GetCustomer(int id)
         {
-            repo.FindById(id);
+            return repo.FindById(id);
         }
 
-        public void ListCustomers()
+        public List<Customer> ListCustomers()
         {
-            repo.GetAll();
+            return repo.GetAll().ToList();
         }
     }
 }

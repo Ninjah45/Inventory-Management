@@ -8,20 +8,20 @@ namespace InventoryManagement
 {
     public class StockItemsDb
     {
-        public Repository<StockItems> repo = new Repository<StockItems>();
+        public Repository<StockItem> repo = new Repository<StockItem>();
 
         public StockItemsDb()
         {
 
         }
 
-        public void AddItem(StockItems item)
+        public void AddItem(StockItem item)
         {
             repo.Add(item);
             repo.SaveChanges();
         }
 
-        public void RemoveItem(StockItems item)
+        public void RemoveItem(StockItem item)
         {
             repo.Delete(item);
             repo.SaveChanges();
@@ -32,9 +32,9 @@ namespace InventoryManagement
             return repo.FindById(id);
         }
 
-        public List<StockItems> ListItems()
+        public List<StockItem> ListItems()
         {
-            return repo.GetAll();
+            return repo.GetAll().ToList();
         }
 
         public int GetQuantity(int id)
