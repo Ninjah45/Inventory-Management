@@ -1,1 +1,0 @@
-C:\Code\Inventory-Management\InventoryManagement\InventoryTest\obj\Debug\InventoryTest.csprojResolveAssemblyReference.cache
