@@ -15,10 +15,11 @@ namespace InventoryManagement
 
         public void DisplayMenu()
         {
-            Console.WriteLine("Adjust stock [ADJUST]");
-            Console.WriteLine("List Stock items [LIST]");
-            Console.WriteLine("Add new Stock item [ADD]");
-            Console.WriteLine("");
+            Console.WriteLine("Adjust Stock quantity:        [ADJUST, ID]");
+            Console.WriteLine("List Stock items:             [LIST]");
+            Console.WriteLine("Add new Stock item:           [ADD, NAME, PRICE, QUANTITY]");
+            Console.WriteLine("Delete Stock item:            [DELETE, ID]");
+
         }
 
         public void NewCustomerOrder()
@@ -28,7 +29,7 @@ namespace InventoryManagement
 
         public void ChangeQuantity(int id)
         {
-            Console.WriteLine("What's the new quantity for" + StockItemsDb.GetItem(id).Name + "?");
+            Console.WriteLine("What's the new quantity for {0}?", StockItemsDb.GetItem(id).Name);
             int quantity = Convert.ToInt32(Console.ReadLine());
             StockItemsDb.UpdateStock(id, quantity);
         }
@@ -42,16 +43,5 @@ namespace InventoryManagement
             }
         }
 
-        //public void ConfirmAdjustment(int stockid, int quantity)
-        //{
-        //    if (quantity > stockid.quantity)
-        //    {
-        //        Console.WriteLine("You've added" + STOCKNAME + ". New total is " + quantity + ".");
-        //    }
-        //    if (quantity < stockid.quantity)
-        //    {
-        //        Console.WriteLine("You've removed" + STOCKNAME + ". New total is " + quantity + ".");
-        //    }
-        //}
     }
 }

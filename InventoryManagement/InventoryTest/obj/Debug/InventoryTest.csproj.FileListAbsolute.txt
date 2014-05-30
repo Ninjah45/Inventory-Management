@@ -1,4 +1,3 @@
-C:\Code\Inventory-Management\InventoryManagement\InventoryTest\obj\Debug\InventoryTest.csprojResolveAssemblyReference.cache
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\InventoryTest.dll
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\InventoryTest.pdb
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\InventoryManagement.exe
@@ -9,5 +8,6 @@ C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\Invento
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\nunit.framework.xml
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\Mindscape.LightSpeed.xml
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\bin\Debug\Mindscape.LightSpeed.Linq.xml
+C:\Code\Inventory-Management\InventoryManagement\InventoryTest\obj\Debug\InventoryTest.csprojResolveAssemblyReference.cache
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\obj\Debug\InventoryTest.dll
 C:\Code\Inventory-Management\InventoryManagement\InventoryTest\obj\Debug\InventoryTest.pdb
