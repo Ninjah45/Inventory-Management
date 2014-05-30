@@ -10,21 +10,24 @@ namespace InventoryManagement
     {
         public void Header()
         {
-            Console.WriteLine("INVENTORY STOCK APPLICATION"); 
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("<<<<<<<<<<<<<<<<");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write("INVENTORY STOCK APPLICATION");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write(">>>>>>>>>>>>>>>>");
+            Console.WriteLine();
         }
 
         public void DisplayMenu()
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("Adjust Stock quantity:        [ADJUST, ID]");
             Console.WriteLine("List Stock items:             [LIST]");
             Console.WriteLine("Add new Stock item:           [ADD, NAME, PRICE, QUANTITY]");
             Console.WriteLine("Delete Stock item:            [DELETE, ID]");
-
-        }
-
-        public void NewCustomerOrder()
-        {
-            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(">>");
         }
 
         public void ChangeQuantity(int id)
