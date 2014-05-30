@@ -8,43 +8,45 @@ namespace InventoryManagement
 {
     public class StockItemsDb
     {
-        public Repository<StockItem> repo = new Repository<StockItem>();
+        public static Repository<StockItem> repo = new Repository<StockItem>();
 
         public StockItemsDb()
         {
-
         }
 
-        public void AddItem(StockItem item)
+        public static void AddItem(StockItem item)
         {
             repo.Add(item);
             repo.SaveChanges();
         }
 
-        public void Adjust(int i, int j)
+        public static void RemoveItem(StockItem item)
         { 
-            //temp method to make things sort of work.
-        }
-
-        public void RemoveItem(StockItem item)
-        {
+    
             repo.Delete(item);
             repo.SaveChanges();
         }
 
-        public StockItem GetItem(int id)
+        public static StockItem GetItem(int id)
         {
             return repo.FindById(id);
         }
 
-        public List<StockItem> ListItems()
+        public static List<StockItem> ListItems()
         {
             return repo.GetAll().ToList();
         }
 
-        public int GetQuantity(int id)
+        public static int GetQuantity(int id)
         {
             return repo.FindById(id).Quantity;
+        }
+
+        public static void UpdateStock(int id, int adjust)
+        {
+            var update = repo.FindById(id);
+            update.Quantity += adjust;
+            repo.SaveChanges();
         }
 
     }

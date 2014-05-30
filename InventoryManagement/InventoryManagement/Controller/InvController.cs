@@ -8,40 +8,59 @@ namespace InventoryManagement
 {
     public class InvController
     {
-        StockItemsDb stock = new StockItemsDb();
+       
         ConsoleView view = new ConsoleView();
 
-        //public void SwitchMenu(string input, string parameter)
-        //{
-        //    switch (input.ToUpper())  //MENU SWITCH
-        //    {
-        //        case "ADJUST":
-        //            int stockid;                    
-        //            int.TryParse(input, out stockid);
-        //            int quantity = view.ConfirmQuantity(stockid);
-        //            view.ConfirmAdjustment(stockid, quantity);
-        //            stock.Adjust(stockid, quantity);
-        //        break;
-
-        //        case "ORDER":
-        //            OrderMenu();
-        //        break;
-
-        //        case "STOCK":
-
-        //        break;
-
-        //        default:
-
-        //            Console.WriteLine("Invalid command");
-
-        //        break;
-        //    }
-        //}
-
-        public void OrderMenu()
+        public void Start()
         {
- 
+            view.Header();
+            view.DisplayMenu();
+            var input = Console.ReadLine();
+            var inputArray = input.Split(' ');
+            SwitchMenu(inputArray);
+        }
+
+
+        public void SwitchMenu(string[] parameter)
+        {
+            switch (parameter[0].ToUpper())  //MENU SWITCH
+            {
+                case "ADJUST":
+                    {
+                        view.ChangeQuantity(Convert.ToInt32(parameter[1]));
+                        break;
+                    }
+                case "LIST":
+                    {
+                        view.ListStock();
+                        Console.ReadLine();
+                        break;
+                    }
+                case "ADD":
+                    {
+                        StockItem item = new StockItem()    
+                        { 
+                            Name = parameter[1],
+                            Price = Convert.ToDecimal(parameter[2]),
+                            Quantity = Convert.ToInt32(parameter[3])
+                        };                        
+                        StockItemsDb.AddItem(item);
+                        break;
+                    }
+                case "DELETE":
+                    {
+                        var item = StockItemsDb.GetItem(Convert.ToInt32(parameter[1]));
+                        StockItemsDb.RemoveItem(item);
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Invalid command");
+                        break;
+                    }                    
+               }
+            Console.Clear();
+            Start();
         }
     }
 }

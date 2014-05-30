@@ -6,7 +6,11 @@
         <entityProperty name="OrderDate" dataType="DateTime" columnName="order_date" privateSetter="false" />
       </entityProperties>
       <oneToManyAssociations>
+<<<<<<< HEAD
+        <oneToManyAssociation Id="b1806b33-fc73-4e8c-b0d1-191a2eec2228" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
+=======
         <oneToManyAssociation Id="803919a8-7bec-47d2-8de9-3fedecba0e97" collectionName="ItemOrders" backreferenceName="Orders" isNullable="false" columnName="orders_id">
+>>>>>>> master
           <entityMoniker name="/LightSpeedModel1/ItemOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>
@@ -23,7 +27,11 @@
         <entityProperty name="Quantity" dataType="Int32" privateSetter="false" />
       </entityProperties>
       <oneToManyAssociations>
+<<<<<<< HEAD
+        <oneToManyAssociation Id="6cf7ddd8-b042-4b19-ad2e-4ce488d37eec" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false" columnName="stock_items_id">
+=======
         <oneToManyAssociation Id="48afdbae-cda5-45f5-acfe-ee2d5d35eca2" collectionName="ItemOrders" backreferenceName="StockItems" isNullable="false" columnName="stock_items_id">
+>>>>>>> master
           <entityMoniker name="/LightSpeedModel1/ItemOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>
@@ -44,7 +52,11 @@
         </entityProperty>
       </entityProperties>
       <oneToManyAssociations>
+<<<<<<< HEAD
+        <oneToManyAssociation Id="542351db-3230-4f5e-9087-d1475ecf3ba6" collectionName="CustOrders" backreferenceName="Cust" isNullable="false" columnName="cust_id">
+=======
         <oneToManyAssociation Id="a7985e9e-45d7-4151-bf33-91ca032229c2" collectionName="CustOrders" backreferenceName="Cust" isNullable="false" columnName="cust_id">
+>>>>>>> master
           <entityMoniker name="/LightSpeedModel1/CustOrder" />
         </oneToManyAssociation>
       </oneToManyAssociations>
