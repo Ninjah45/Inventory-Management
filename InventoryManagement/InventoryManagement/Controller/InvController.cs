@@ -9,13 +9,13 @@ namespace InventoryManagement
     public class InvController
     {
        
-        ConsoleView view = new ConsoleView();
+        ConsoleView view = new ConsoleView(); // BA private ConsoleView view - make the accessibility explicit
 
         public void Start()
         {
             view.Header();
             view.DisplayMenu();
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.DarkGreen; // BA why are you talking to the console in the controller? This should be work that the view does for you
             var input = Console.ReadLine();
             var inputArray = input.Split(' ');
             SwitchMenu(inputArray);
@@ -34,11 +34,14 @@ namespace InventoryManagement
                 case "LIST":
                     {
                         view.ListStock();
-                        Console.ReadLine();
+                        Console.ReadLine(); // BA this is a view concern
                         break;
                     }
                 case "ADD":
                     {
+                        // BA if you're going to have wrapper classes over the repository, this is the sort of work that they should be doing.
+                        // Rather than creating a stockitem here, add a method to the StockItemsDb class which takes a string, a decimal, and an int,
+                        // and create your new StockItem in that method before giving it to the repo.
                         StockItem item = new StockItem()    
                         { 
                             Name = parameter[1],
@@ -50,17 +53,17 @@ namespace InventoryManagement
                     }
                 case "DELETE":
                     {
-                        var item = StockItemsDb.GetItem(Convert.ToInt32(parameter[1]));
+                        var item = StockItemsDb.GetItem(Convert.ToInt32(parameter[1])); // BA, again, delegate this work to the StockItemsDb class, since you have it
                         StockItemsDb.RemoveItem(item);
                         break;
                     }
                 default:
                     {
-                        Console.WriteLine("Invalid command");
+                        Console.WriteLine("Invalid command"); // BA this is a view concern
                         break;
                     }                    
                }
-            Console.Clear();
+            Console.Clear(); // BA this is a view concern
             Start();
         }
     }

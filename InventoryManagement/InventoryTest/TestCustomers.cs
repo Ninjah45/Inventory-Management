@@ -25,12 +25,26 @@ namespace InventoryTest
         //}
 
         [Test]
-        public void test_that_ADD_adds_to_list()
+        public void test_that_ADD_adds_to_list() // BA No need to prefix test names with the word test. I know it's a test. It's
+                                                 // got a [Test] attribute. Try to write your test name like this.
+
+        // Given_the_specified_inputs_TheMethodUnderTest_will_have_this_result - or to put it another way
+        // With_this_arrangement______TheMethodUnderTest_will_have_this_result - or...
+        // With_this_arrangement______this_action________will_have_this_result - or
+        // Arrange____________________Act________________Assert_______________
+
+        // So this test would be called
+        // Given_a_customer_object_AddCustomer_will_persist_it_to_the_database
         {
+            // BA Arrange - And use comments to structure your tests
             int length = repo.GetAll().Count();
             var input = new Customer { Name = "Hey, just testing Customer", Address = "Test customer lives here"};
+
+            // BA Act
             custDB.AddCustomer(input);
             int newLength = repo.GetAll().Count();
+
+            // BA Assert
             Assert.Greater(newLength, length);
         }
 

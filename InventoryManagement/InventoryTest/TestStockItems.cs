@@ -49,7 +49,7 @@ namespace InventoryTest
         }
 
         [Test]
-        public void test_that_LISTITEMS_lists_items_for_list_id()   //this gets all of the items, not just the items for a single list.
+        public void test_that_LISTITEMS_lists_items_for_list_id()   //this gets all of the items, not just the items for a single list. // BA change the name of the test to reflect the actual behaviour, rather than adding a comment
         {
             var customers = StockItemsDb.ListItems();
 
